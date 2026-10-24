@@ -19,7 +19,7 @@ public class MailService(
         var emailInfo = userInput.GetEmailInfo();
 
         var recipient = await db.Contacts.FirstOrDefaultAsync(c => c.Name == emailInfo.Name.ToLower() || c.Name.StartsWith(emailInfo.Name.ToLower() + " "), ct);
-        Console.Clear();
+        UIHelper.ClearScreen();
 
         if (recipient is null)
         {

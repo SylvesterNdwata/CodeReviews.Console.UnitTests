@@ -5,6 +5,8 @@ using silvermax.PhoneBook.Services;
 using Spectre.Console;
 using Spectre.Console.Testing;
 
+[assembly: CollectionBehavior(DisableTestParallelization = true)]
+
 namespace PhoneBook.IntegrationTests;
 
 [Collection("Database")]

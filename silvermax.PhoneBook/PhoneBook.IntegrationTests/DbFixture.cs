@@ -29,7 +29,7 @@ public class DbFixture : IAsyncLifetime
         };
 
         var options = new DbContextOptionsBuilder<ContactDbContext>()
-            .UseSqlServer(config.GetConnectionString("DefaultTestConnection"))
+            .UseSqlServer(builder.ConnectionString)
             .Options;
 
         Db = new ContactDbContext(options);

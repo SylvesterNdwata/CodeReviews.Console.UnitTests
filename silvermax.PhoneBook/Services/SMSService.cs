@@ -20,7 +20,7 @@ public class SMSService(
         var smsMessage = userInput.GetSMSInfo();
 
         var recipient = await db.Contacts.FirstOrDefaultAsync(c => c.Name == smsMessage.Name.ToLower() || c.Name.StartsWith(smsMessage.Name.ToLower() + " "), ct);
-        Console.Clear();
+        UIHelper.ClearScreen();
 
         if (recipient is null)
         {
